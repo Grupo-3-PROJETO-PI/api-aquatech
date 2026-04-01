@@ -12,17 +12,17 @@ const HABILITAR_OPERACAO_INSERIR = false;
 
 // função para comunicação serial
 const serial = async (
-    valoresSensorAnalogico,
-    valoresSensorDigital,
+    // valoresSensorAnalogico,
+    valoresSensorDigital
 ) => {
 
     // conexão com o banco de dados MySQL
     let poolBancoDados = mysql.createPool( // tem que criar o usuario
         {
-            host: 'HOST_DO_BANCO',
-            user: 'USUARIO_DO_BANCO',
-            password: 'SENHA_DO_BANCO',
-            database: 'DATABASE_DO_BANCO',
+            host: 'localhost',
+            user: 'user_insert',
+            password: 'urubu100',
+            database: 'flowtrak',
             port: 3306
         }
     ).promise();
@@ -63,7 +63,7 @@ const serial = async (
 
             // este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO medida (sensorBloqueio) VALUES (?)',
+                'INSERT INTO dado_captado (sensorBloqueio, fk_sensor) VALUES (?, 1)',
                 [sensorBloqueio]
             );
             console.log("valores inseridos no banco: " + sensorBloqueio);
@@ -77,10 +77,9 @@ const serial = async (
         console.error(`Erro no arduino (Mensagem: ${mensagem}`)
     });
 }
-
 // função para criar e configurar o servidor web
 const servidor = (
-    valoresSensorAnalogico,
+    // valoresSensorAnalogico,
     valoresSensorDigital
 ) => {
     const app = express();
@@ -98,9 +97,9 @@ const servidor = (
     });
 
     // define os endpoints da API para cada tipo de sensor
-    app.get('/sensores/analogico', (_, response) => {
-        return response.json(valoresSensorAnalogico);
-    });
+    // app.get('/sensores/analogico', (_, response) => {
+    //     return response.json(valoresSensorAnalogico);
+    // });
     app.get('/sensores/digital', (_, response) => {
         return response.json(valoresSensorDigital);
     });
