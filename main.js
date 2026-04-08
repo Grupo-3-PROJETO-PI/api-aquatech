@@ -21,9 +21,9 @@ const serial = async (
         {
             host: 'localhost',
             user: 'user_insert',
-            password: 'urubu100',
+            password: 'SPTech#2024',
             database: 'flowtrak',
-            port: 3306
+            port: 3307
         }
     ).promise();
 
