@@ -8,7 +8,7 @@ const SERIAL_BAUD_RATE = 9600;
 const SERVIDOR_PORTA = 3300;
 
 // habilita ou desabilita a inserção de dados no banco de dados
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 // função para comunicação serial
 const serial = async (
@@ -63,7 +63,7 @@ const serial = async (
 
             // este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO dado_captado (sensorBloqueio, fk_sensor) VALUES (?, 1)',
+                'INSERT INTO dado_captado (quantidade_pessoas, fk_sensor) VALUES (?, 1)',
                 [sensorBloqueio]
             );
             console.log("valores inseridos no banco: " + sensorBloqueio);

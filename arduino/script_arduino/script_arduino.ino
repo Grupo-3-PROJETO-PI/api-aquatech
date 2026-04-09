@@ -3,7 +3,7 @@
 
 int pinoTrigger = 12;
 int pinoEcho = 13;
-HC_SR04 = sensor(pinoTrigger, pinoEcho);
+HC_SR04 sensor(pinoTrigger, pinoEcho);
 
 void setup() {
   // put your setup code here, to run once:
