@@ -37,5 +37,10 @@ api-dat-acqu-ino/
 └── README.md
 ```
 
+## Como Executar Localmente
 
+1. Clone o repositório:
+```terminal
+git clone https://github.com/FlowTrak-26/api-dat-acqu-ino.git
+```
 
