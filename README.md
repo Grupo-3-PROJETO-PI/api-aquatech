@@ -8,6 +8,7 @@
 **Sistema Inteligente de Monitoramento de Fluxo em Supermercados**
 
 > Repositório dedicado a API utilizada pela FlowTrak 
+    ponte entre banco de dados e dashboard
 
 </div>
 
