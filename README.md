@@ -15,5 +15,8 @@
 <h2>link do site que ultiliza a API</h2>
 <pre>https://flowtrak-26.github.io/site-institucional/</pre>
 
+A **API-DAT-ACQU-INO™** é a API responsável pela inserção dos dados adquiridos pelo sensor ligado ao arduíno no Banco de Dados MYSQL.
+
+
 
 
