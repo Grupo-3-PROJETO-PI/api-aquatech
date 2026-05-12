@@ -1,3 +1,4 @@
+DROP DATABASE IF EXISTS flowtrak;
 CREATE DATABASE flowtrak;
 USE flowtrak;
 
